@@ -219,10 +219,13 @@ const startLogOutTimer = function () {
       labelWelcome.textContent = 'Log in to get started';
       containerApp.style.opacity = 0;
     }
+    if(time === 10){
+      alert("You have approximately 10 sec, before logging out! ");
+    }
     time--;
   };
   // See time to 5 minutes
-  let time = 300;
+  let time = 20;
 
   //Call the timer every second
   tick();
@@ -291,6 +294,8 @@ btnLogin.addEventListener('click', function (e) {
     timer = startLogOutTimer();
     // Update UI
     updateUI(currentAccount);
+  }else{
+    alert("Wrong login username or password! Try again!");
   }
 });
 
@@ -321,6 +326,8 @@ btnTransfer.addEventListener('click', function (e) {
     //Reset timer
     clearInterval(timer);
     timer = startLogOutTimer();
+  }else{
+    alert("Wrong username! Try again!");
   }
 });
 
